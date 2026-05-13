@@ -1,0 +1,21 @@
+# Never upload videos or audio
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.mp3
+*.wav
+*.m4a
+*.aac
+
+# No environment files
+.env
+.env.*
+*.secret
+
+# macOS
+.DS_Store
+
+# Temp files
+*.tmp
