@@ -33,16 +33,56 @@ ls -lh "<video_path>"
 ### Step 2 — Get the music file
 
 Ask:
-> "¿Cuál es la ruta del archivo de música? (MP3, WAV, M4A, AAC, FLAC)"
+> "¿Tienes ya un archivo de música, o quieres que te ayude a encontrar una?
+> 1. Ya tengo un archivo (pega la ruta)
+> 2. Ayúdame a encontrar música gratis"
 
+If option 1:
 ```bash
 ls -lh "<music_path>"
 ```
 
-If the user doesn't have a music file, suggest free sources:
-- **Pixabay Music**: pixabay.com/music (free, no attribution)
-- **YouTube Audio Library**: studio.youtube.com/channel/music
-- **Free Music Archive**: freemusicarchive.org
+If option 2, go to **Step 2B — Find Free Music**.
+
+---
+
+### Step 2B — Find Free Music
+
+Ask:
+> "¿Qué tipo de música buscas?
+> 1. Ambiental / lo-fi (para tutoriales, vlogs)
+> 2. Energética / upbeat (para highlights, trailers)
+> 3. Cinematográfica / épica (para intros, demos)
+> 4. Relajante / minimalista (para presentaciones)
+> 5. Otro — descríbela"
+
+Then ask:
+> "¿De dónde quieres buscarla?
+> 1. YouTube Audio Library — studio.youtube.com (sin copyright, gratis para YouTube)
+> 2. Pixabay Music — pixabay.com/music (libre para uso comercial, sin atribución)
+> 3. Mixkit — mixkit.co/free-music (gratis para YouTube Shorts)"
+
+**Guide the user to the right source:**
+
+| Fuente | Mejor para | Requiere cuenta |
+|---|---|---|
+| YouTube Audio Library | YouTube Shorts / videos | Sí (cuenta Google) |
+| Pixabay Music | Cualquier plataforma, uso comercial | No |
+| Mixkit | YouTube, Instagram, TikTok | No |
+
+Once the user selects and downloads a track, ask for the file path and continue.
+
+**Download from YouTube Audio Library with yt-dlp (if user shares URL):**
+```bash
+yt-dlp -x --audio-format mp3 --audio-quality 0 \
+  -o "~/Downloads/%(title)s.%(ext)s" \
+  "<youtube-audio-library-url>"
+```
+
+**Download from Pixabay/Mixkit (direct MP3 link):**
+```bash
+curl -L "<direct-mp3-url>" -o "~/Downloads/music.mp3"
+```
 
 ### Step 3 — Audio mode
 
