@@ -24,3 +24,7 @@ __pycache__/
 
 # Temp files
 *.tmp
+
+# Project folders (keep local only)
+skalestack-v-ads-1/
+test-1/
