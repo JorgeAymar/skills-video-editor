@@ -86,15 +86,6 @@ Scores your video across 8 signals:
 
 ## Example Projects
 
-### `skalestack-v-ads-1`
-
-Production video ad project for Skalestack. Includes:
-- `render_v4.py` — main renderer using ffmpeg + HyperFrames
-- `gen_voice_v3.py` — TTS voice generation
-- `gen_plan_pdf.py` — PDF production plan generator
-- `previews/` — scene preview screenshots (sc1–sc6)
-- `Plan de Producción Video ads v-ads-1.md` — full production brief
-
 ### `test-1`
 
 Proof-of-concept tests: video highlight extraction, lip sync, and subtitle workflows.
